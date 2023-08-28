@@ -1,6 +1,7 @@
 # Study
 
 network : [ Book ] IT엔지니어를 위한 네트워크 입문
+
 ## 일정
 
 1. 2023-08-06(일) PM 04 : 00 ( 장소 : [다옴](http://www.daomstudy.com/?doc=sub_location) )
@@ -11,7 +12,7 @@ network : [ Book ] IT엔지니어를 위한 네트워크 입문
 3. 2023-08-26(토) AM 11 : 00 ( 장소 : [모어스터디](https://morestudy.modoo.at/) )
     - 3장 네트워크 통신하기
     - 발표 : 장예진
-4. 2023-09-02(토) AM 11 : 00 ( 장소 : [모어스터디](https://morestudy.modoo.at/) )
+4. 2023-09-02 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
     - 4장 스위치: 2계층 장비
     - 발표 : 김현기
     - 5장 라우터/L3 스위치: 3계층 장비
