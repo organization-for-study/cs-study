@@ -97,7 +97,7 @@
  &nbsp; &nbsp; &nbsp; ![hosttohostimg](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaDGIImN-LEUSN0cFjN040psPRSpl5TWJ2g&usqp=CAU)
 ##### &nbsp; &nbsp; &nbsp; : 두 호스트 간에 직접 VPN 터널을 연동하는 기법
 ##### &nbsp; &nbsp; - Network to Network 통신
- &nbsp; &nbsp; &nbsp; ![networktonetwork](https://techgenix.com/tgwordpress/wp-content/uploads/2022/10/2-21.png)
+ &nbsp; &nbsp; &nbsp; ![[networktonetwork](https://techgenix.com/tgwordpress/wp-content/uploads/2022/10/2-21.png)](https://techgenix.com/tgwordpress/wp-content/uploads/2022/10/2-21-1024x268.png)
 ##### &nbsp; &nbsp; &nbsp; : 본사-지사 같은 특정 네트워크를 가진 두 종단을 연결하는 경우
 ##### &nbsp; &nbsp; &nbsp; : IPSEC 프로토콜 스택이 가장 많이 사용
 ##### &nbsp; &nbsp; - Host to Network 통신
