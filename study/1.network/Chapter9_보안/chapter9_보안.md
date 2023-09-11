@@ -94,13 +94,13 @@
 ##### &nbsp; &nbsp; &nbsp; : Network to Network 통신 보호
 ##### &nbsp; &nbsp; &nbsp; : Host to Network 통신 보호
 ##### &nbsp; &nbsp; - Host to Host 통신
- &nbsp; &nbsp; &nbsp; ![hosttohostimg](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaDGIImN-LEUSN0cFjN040psPRSpl5TWJ2g&usqp=CAU)
+ &nbsp; &nbsp; &nbsp; ![hosttohostimg](https://knowledgebase.paloaltonetworks.com/servlet/rtaImage?eid=ka14u000000Xwja&feoid=00N0g000003VXsl&refid=0EM4u000005T3nu)
 ##### &nbsp; &nbsp; &nbsp; : 두 호스트 간에 직접 VPN 터널을 연동하는 기법
 ##### &nbsp; &nbsp; - Network to Network 통신
- &nbsp; &nbsp; &nbsp; ![[networktonetwork](https://techgenix.com/tgwordpress/wp-content/uploads/2022/10/2-21.png)](https://techgenix.com/tgwordpress/wp-content/uploads/2022/10/2-21-1024x268.png)
+ &nbsp; &nbsp; &nbsp; ![networktonetwork](https://www.tp-link.com/us/configuration-guides/configuration_guide_for_vpn/configuration_guide_for_vpn-web-resources/image/2.png)
 ##### &nbsp; &nbsp; &nbsp; : 본사-지사 같은 특정 네트워크를 가진 두 종단을 연결하는 경우
 ##### &nbsp; &nbsp; &nbsp; : IPSEC 프로토콜 스택이 가장 많이 사용
 ##### &nbsp; &nbsp; - Host to Network 통신
- &nbsp; &nbsp; &nbsp; ![hosttonetwork](https://techgenix.com/tgwordpress/wp-content/uploads/2022/10/3-19.png)
+ &nbsp; &nbsp; &nbsp; ![hosttonetwork](https://www.tp-link.com/us/configuration-guides/configuration_guide_for_vpn/configuration_guide_for_vpn-web-resources/image/3.png)
 ##### &nbsp; &nbsp; &nbsp; : 모바일 사용자가 일반 인터넷망을 통해 사내망으로 연결하는 경우
 ##### &nbsp; &nbsp; &nbsp; : SSL 프로토콜이 범용적으로 사용
