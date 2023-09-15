@@ -3,6 +3,8 @@
 -----------------------------------
 ### 1. 부하 분산 
 #### &nbsp; 1) 부하 문제 해결 방안 : 로드 밸런서
+<img src = "https://user-images.githubusercontent.com/50273712/140634974-ff0038af-e9b6-48ef-a565-1d454f32377c.png"/>
+
 ##### &nbsp; &nbsp;  - 동일한 서비스를 하는 다수의 서버가 등록되고 사용자로부터 서비스 요청이 오면 로드밸런서가 받아 사용자별로 다수의 서버에 서비스 요청을 분산시켜 부하를 분산
 ##### &nbsp; &nbsp;  - 서비스를 위한 가상 IP를 하나 제공하고 사용자는 각 서버의 개발 IP 주소가 아닌 동일한 가상 IP를 통해 각 서버로 접근
 > ##### FWLB : 방화벽 분산
@@ -12,10 +14,14 @@
 
 ### 2. L4 로드밸런서 vs L7 로드밸런서
 #### &nbsp; 1) L4 로드밸런서
+<img src = "https://nesoy.github.io/assets/posts/20180602/5.png" />
+
 ##### &nbsp; &nbsp;  - 전송 계층에서 로드를 분산
 ##### &nbsp; &nbsp;  - IP주소나 포트번호, MAC주소 등에 따라 트래픽을 나누고 분산처리 가능
 ##### &nbsp; &nbsp;  - CLB(Connection Load Balancer) 혹은 SLB(Session Load Balancer)이라고 부름
 #### &nbsp; 2) L7 로드밸런서
+<img src = "https://nesoy.github.io/assets/posts/20180602/6.png" />
+
 ##### &nbsp; &nbsp;  - 애플리케이션 계층에서 로드를 분산
 ##### &nbsp; &nbsp;  - OSI 7계층의 프로토콜(HTTP, SMTP 등)을 바탕으로 분산 처리가 가능
 
@@ -30,10 +36,14 @@
 
 ### 3. 부하 분산 알고리즘
 #### &nbsp; 1) 라운드 로빈
+<img src = "https://i0.wp.com/nginxstore.com/wp-content/uploads/2023/04/image-14.png?w=685&ssl=1" />
+
 ##### &nbsp; &nbsp;  - 서버에 들어온 요청을 순서대로 트래픽을 분산
 ##### &nbsp; &nbsp;  - 모든 서버의 누적 세션 수 동일
 ##### &nbsp; &nbsp;  - 클라이언트의 요청을 순서대로 분배하기 때문에 여러 대의 서버가 동일한 스팩을 가지고 있고, 서버와의 연결(세션)이 오래 지속되지 않는 경우에 활용하기 적합
 #### &nbsp; 2) 최소 접속 방식
+<img src = "https://i0.wp.com/nginxstore.com/wp-content/uploads/2023/04/image-16.png?w=685&ssl=1" />
+
 ##### &nbsp; &nbsp;  - 서버가 가진 세션 부하를 확인해 그것에 맞게 부하를 분산하는 방식
 ##### &nbsp; &nbsp;  - 각 장비의 세션 수를 확인해 현재 세션이 가장 적게 연결된 장비로 서비스 요청을 보내는 방식
 ##### &nbsp; &nbsp;  - 각 장비에서 처리되는 활성화 세션 수가 비슷하게 분산되면서 부하를 분산
