@@ -5,7 +5,10 @@
 | network        | Book | IT엔지니어를 위한 네트워크 입문 |
 | design-pattern | Book | 헤드퍼스트 디자인패턴        |
 
-### schedule
+
+<hr>
+
+### schedule (일정)
 
 <details>
 <summary>network</summary>
@@ -41,6 +44,13 @@
 7. 2023-09-23 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
     - 자유 주제로 발표
 
+</div>
+</details>
+
+
+<details>
+<summary>design-pattern</summary>
+<div markdown="1">
 </div>
 </details>
 
