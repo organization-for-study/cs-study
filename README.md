@@ -33,6 +33,11 @@ network : [ Book ] IT엔지니어를 위한 네트워크 입문
     - 발표 : 장예진
 7. 2023-09-23 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
    - 자유 주제로 발표
+8. 2023-10-07 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
+   - 1장
+   - 발표 : 이은영
+   - 2장
+   - 발표 : 김현기
 
 ### 참조 repository
 
