@@ -1,8 +1,15 @@
-# Study
+## Study
 
-network : [ Book ] IT엔지니어를 위한 네트워크 입문
+| title          | type |                    |
+|:---------------|------|:-------------------|
+| network        | Book | IT엔지니어를 위한 네트워크 입문 |
+| design-pattern | Book | 헤드퍼스트 디자인패턴        |
 
-## 일정
+### schedule
+
+<details>
+<summary>network</summary>
+<div markdown="1">
 
 1. 2023-08-06(일) PM 04 : 00 ( 장소 : [다옴](http://www.daomstudy.com/?doc=sub_location) )
     - 자율학습 및 발표
@@ -32,18 +39,14 @@ network : [ Book ] IT엔지니어를 위한 네트워크 입문
     - 12장 로드 밸런서
     - 발표 : 장예진
 7. 2023-09-23 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
-   - 자유 주제로 발표
-8. 2023-10-07 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
-   - 1장
-   - 발표 : 이은영
-   - 2장
-   - 발표 : 김현기
+    - 자유 주제로 발표
 
-### 참조 repository
+</div>
+</details>
 
-- [컴학도-CS-study](https://github.com/Seogeurim/CS-study)
-- [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
-- [Ready-For-Tech-Interview](https://github.com/WooVictory/Ready-For-Tech-Interview)
-- [tech-interview-for-developer](https://github.com/gyoogle/tech-interview-for-developer)
-- [WeareSoft/tech-interview](https://github.com/WeareSoft/tech-interview)
+- 2023-10-07 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
+    - 1장 : 디자인패턴의 소개   (이은영)
+    - 2장 : Observer_Pattern (김현기)  
+   
+   
 
