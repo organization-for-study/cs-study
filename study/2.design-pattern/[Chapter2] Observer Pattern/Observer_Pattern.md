@@ -156,7 +156,7 @@ public class NewsPaper implements Observer {
 - swing
 - javaBean
 - JavaScript의 이벤트 핸들러
-- MVC 패턴
+- MVC 패턴 : 컨트롤러(Controller)와 뷰(View) 간의 통신에서 옵저버 패턴의 개념을 활용할 수 있다
 - 주식 시장 알림:
   > 주식 시장 데이터를 관찰하는 주식 앱에서는 주식 가격의 변동을 실시간으로 사용자에게 알려주는 데<br>
   > 주식 데이터가 변경될 때마다 관련된 모든 사용자에게 알림을 전송.
