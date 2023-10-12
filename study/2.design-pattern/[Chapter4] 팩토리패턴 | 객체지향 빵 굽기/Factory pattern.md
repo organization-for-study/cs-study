@@ -28,10 +28,22 @@
 ### 팩토리 메소드 패턴 
 ##### 1. 팩토리 메소드 패턴이란?
 ###### 클래스의 인스턴스를 만드는 일을 서브클래스에 맡기는 패턴
-###### &nbsp;- &nbsp;객체를 생성하기 위한 인터페이스를 정의하는 과정에서 어떤 클래스의 인스턴스를 만들지는 서브클래스에서 결정한다.
+###### &nbsp;- &nbsp;객체를 생성하기 위한 인터페이스를 정의하는 과정에서 어떤 클래스의 인스턴스를 만들지는 서브클래스에서 결정한다.<br>
+
+##### 2. 팩토리 메소드 패턴 UML
+![팩토리매서드UML](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9999D8385BE5725009)
+###### 1) Product 
+###### &nbsp;- &nbsp; 생성된 객체의 인터페이스
+###### 2) ConcreateProduct 
+###### &nbsp;- &nbsp; Product 인터페이스를 구현한 구상 클래스
+###### 3) Creator 
+###### &nbsp;- &nbsp; 객체를 생성하는 팩토리 메서드를 가진 인터페이스
+###### 4) ConcreateCreator 
+###### &nbsp;- &nbsp; Creator 인터페이스를 구현한 구상 클래스
+
 <br>
 
-##### 2. 팩토리 메소드 패턴 코드 (피자 가게 예시)
+##### 3. 팩토리 메소드 패턴 코드 (피자 가게 예시)
 ###### 1) 피자 만들기 시작
 ![피자만들기 시작](./factoryMethod_code1.png)
 ###### 2) 피자 가게 만들기
@@ -42,7 +54,7 @@
 ![주문자피자만들기2](./factoryMethod_code5.png)
 <br>
 
-##### 3. 팩토리 메소드 패턴 클래스 다이어그램
+##### 4. 팩토리 메소드 패턴 클래스 다이어그램 (피자 가게 예시)
 >###### 제품 클래스와 생성자 클래스는 병렬 클래스 계층 구조이다.
 >###### &nbsp; - 둘 다 추상 클래스로 시작하고, 그 클래스를 확장하는 구상 클래스를 가지고 있다.
 >###### &nbsp; - 지점별 클래스의 구체적인 구현은 구상 클래스들이 책임진다.
@@ -56,7 +68,7 @@
 ![생산자 클래스](./factoryMethod_product.png)
 <br>
 
-##### 4. 팩토리 메소드 패턴 장/단점
+##### 5. 팩토리 메소드 패턴 장/단점
 ###### 1) 장점
 ###### &nbsp;- &nbsp; 생성자와 구현 객체의 강한 결합을 피할 수 있다.
 ###### &nbsp;- &nbsp; 객체의 생성 후 공통으로 할 일을 수행하도록 지정해줄 수 있다.
@@ -73,7 +85,7 @@
 ###### &nbsp;- &nbsp; 코드의 복잡성이 증가한다.
 <br>
 
-##### 5. 실무에서 패턴이 사용되는 경우
+##### 6. 실무에서 패턴이 사용되는 경우
 ###### 1) Spring Framework : BeanFactory
 ###### &nbsp;- &nbsp; Object 타입의 Product를 만드는 BeanFactory 라는 Creator 
 ###### &nbsp;- &nbsp; BeanFactory가 Creator 인터페이스이고 이를 구현한 ClassPathXmlApplicationContext, AnnotationConfigApplicationContext가 ConcreteCreator이다.
