@@ -31,7 +31,7 @@
 ###### &nbsp;- &nbsp;객체를 생성하기 위한 인터페이스를 정의하는 과정에서 어떤 클래스의 인스턴스를 만들지는 서브클래스에서 결정한다.<br>
 
 ##### 2. 팩토리 메소드 패턴 UML
-![팩토리매서드UML](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9999D8385BE5725009)
+![팩토리메소드UML](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9999D8385BE5725009)
 ###### 1) Product 
 ###### &nbsp;- &nbsp; 생성된 객체의 인터페이스
 ###### 2) ConcreateProduct 
