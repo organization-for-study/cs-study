@@ -65,7 +65,7 @@ public class Main {
     }
 }
 ```
-![실행결과1](./실행결과1.png)
+<img width="296" alt="실행결과1" src="https://github.com/eEunyoung/CS_Study/assets/140944695/c393a5f4-1318-4eb8-9c47-4e897845206d">
 
 
 하지만 모든 첨가물을 슈퍼클래스에서 관리하다보니 특정 첨가물이 들어갈수 없는 음료에 해당 첨가물이 들어가는 등 예상치 못한 동작을 야기할 수 있습니다.<br>
@@ -157,7 +157,9 @@ public class Main {
     }
 }
 ```
-![](https://velog.velcdn.com/images/beenthlete/post/8da584ff-fc4a-45ed-a48b-d0be0a245ae2/image.png)
+
+<img width="279" alt="실행결과2" src="https://github.com/eEunyoung/CS_Study/assets/140944695/d93d89be-63df-4a88-a72d-e4521b0f6d30">
+
 
 
 > #### Decorator Pattern 을 활용하며 얻은 구조적 이득
