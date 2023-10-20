@@ -60,7 +60,7 @@
 - 2023-10-14 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
     - 3장 : Decorator Pattern (전다빈)
     - 4장 : Factory Pattern (장예진)
-- 2023-10-20 PM 07 : 00 ( 장소 : [다스터디]([https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh](http://daomstudy.com/?doc=sub_location)) )
+- 2023-10-20 PM 07 : 00 ( 장소 : [다옴스터디](http://daomstudy.com/?doc=sub_location) )
     - 5장 : Singleton Pattern (이은영)
     - 6장 : Command Pattern (김현기)
    
