@@ -56,7 +56,8 @@
 
 - 2023-10-07 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
     - 1장 : 디자인패턴의 소개   (이은영)
-    - 2장 : Observer_Pattern (김현기)  
+    - 2장 : Observer_Pattern (김현기)
+
 - 2023-10-14 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
     - 3장 : Decorator Pattern (전다빈)
     - 4장 : Factory Pattern (장예진)
