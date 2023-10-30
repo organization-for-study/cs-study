@@ -6,8 +6,7 @@
 **복합체 패턴 구조**
 <img src = "https://t1.daumcdn.net/cfile/tistory/9959CC495C8910EB0F">
 1. Component (인터페이스)
-   * Leaf와 Composite를 묶는 공통적인 상위 인터페이스이다.
-   * 트리의 단순 요소들과 복잡한 요소들 모두에 공통적인 작업을 설명한다.
+   * Leaf(단순 객체)와 Composite(복합 객체)를 묶는 공통적인 상위 인터페이스이다.
 2. Composite
    * 복합 객체로서, Leaf 역할이나 Composite 역할을 넣어 관리하는 역할을 한다.
    * 자녀들의 구상 클래스들을 알지 못하며, 컴포넌트 인터페이스를 통해서만 모든 하위요소들과 함께 동작한다.
