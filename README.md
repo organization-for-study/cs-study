@@ -64,5 +64,8 @@
 - 2023-10-20 PM 07 : 00 ( 장소 : [다옴스터디](http://daomstudy.com/?doc=sub_location) )
     - 5장 : Singleton Pattern (이은영)
     - 6장 : Command Pattern (김현기)
-   
-
+- 2023-11-03 AM 11 : 00 ( 장소 : [다옴스터디](http://daomstudy.com/?doc=sub_location) )
+    - 7장 : Adapter and Facade Pattern (이은영)
+    - 8장 : Template Method Pattern (김현기)
+    - 9장 : Iterator Pattern and Composite Pattern (장예진)
+    - 10장 : State Pattern (전다빈)
