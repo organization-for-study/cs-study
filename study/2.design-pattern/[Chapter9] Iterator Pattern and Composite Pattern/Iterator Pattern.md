@@ -8,7 +8,7 @@
 * Collection 종류 : List, Stack, Tree 등..
 <img src = "https://refactoring.guru/images/patterns/diagrams/iterator/problem1-2x.png" >
 <br>
-* 순서가 연속적으로 저장되는 컬렉션들은 for문으로 쉽게 순회가 가능하다.
+* 순서가 연속적으로 저장되는 컬렉션들은 for문으로 쉽게 순회가 가능하다.<br>
 * 순서가 정해지지 않고 저장되는 컬렉션들은 접근 방식이 다양하기 때문에 순회 방식이 복잡하다.
 <img src = "https://refactoring.guru/images/patterns/diagrams/iterator/problem2-2x.png">
 <br>
@@ -17,7 +17,7 @@
 
 <br>
 
-**반복자 패턴 구조**
+**반복자 패턴 구조** <br>
 <img src = "https://t1.daumcdn.net/cfile/tistory/22266F4557751E6227">
 1. Aggregate (인터페이스)
    * ConcreateIterator 객체를 반환하는 인터페이스를 제공한다.
