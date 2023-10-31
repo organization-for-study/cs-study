@@ -3,7 +3,7 @@
 > 복합 객체(Composite) 와 단일 객체(Leaf)를 동일한 컴포넌트로 취급하여, 클라이언트에게 이 둘을 구분하지 않고 동일한 인터페이스를 사용하도록 하는 구조 패턴
 <br>
 
-**복합체 패턴 구조**
+**복합체 패턴 구조**<br><br>
 <img src = "https://t1.daumcdn.net/cfile/tistory/9959CC495C8910EB0F">
 1. Component (인터페이스)
    * Leaf(단순 객체)와 Composite(복합 객체)를 묶는 공통적인 상위 인터페이스이다.
