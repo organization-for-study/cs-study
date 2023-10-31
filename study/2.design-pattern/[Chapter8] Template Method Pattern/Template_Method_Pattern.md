@@ -51,7 +51,61 @@ public class Coffee extends CaffeineBeverage {
 }
 ```
 
+-----
+
+> 설명만 봐도 뭔가 느껴지듯이 실제로 현재도 자바에서도 자주 사용되고
+> 우리도 직접 만들 경우가 있을법한 알고리즘이다.
+>
+> 두 가지의 하위클래스에서 사용되지만 변하지 않는 기능, 공통된 기능을 저장하고 확장 기능만 하위클래스에서 구현하면 된다는.
+> 굉장히 직관적이고 쉬운 패턴이다.
+> Simple is Best 라고 쉬운대신 강력한 기능을 가진 패턴이라고 생각한다.
+
 
 -----
 
+## Spring 에서 적용된 대표적인 사례
+
+### DispatcherServlet
+
+<div style="display: flex;width: 100%; border: 1px solid wheat">
+<div style="width: 50%; padding: 20px; text-align: center">
+스플링을 배울때 가장 앞부분에서<br> 
+배우는 DispatcherServlet이다.<br>
+Spring 에서 DispatcherServlet은<br>
+Http 요청에 대해 처리한다<br>
+DispatcherServlet은 Servlet을 상속받는다.<br><br>
+
+processRequest() 는 템플릿 메소드로 정의되어 있어 doService()를 호출한다.<br>
+이 메소드는 추상 메소드로 정의되어 있어<br>
+DispatcherServlet에서 구현해야 한다.<br>
+이렇게하면 Http 프로토콜의 공통 부분을 공통 처리할 수 있다
+</div>
+<img src="img_1.png" height="450px" style="border: 4px solid orange"/>
+</div>
+
+```java
+public abstract class FrameworkServlet extends HttpServletBean implements ApplicationContextAware {
+    protected final void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        initContextHolders(request, localeContext, requestAttributes);
+
+        try {
+            doService(request, response); // template method pattern 이용
+        } finally {
+
+        }
+    }
+
+    protected abstract void doService(HttpServletRequest request, HttpServletResponse response) throws Exception; // subClass에게 위임
+}
+
+public class DispatcherServlet extends FrameworkServlet {
+    @Override
+    protected void doService(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logRequest(request);
+    }
+}
+```
+
+
+------
 
