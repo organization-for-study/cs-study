@@ -13,7 +13,7 @@ Adapter Pattern의 구조
 - Client : Target(Client Interface)를 통해 실제 Service를 이용할 수 있게 된다.(Adapter에 요청)
 
 1. 객체 어댑터(Object Adapter)<br>
-&nbsp;-&nbsp; 객체 구성(Composition)을을 사용한다.<br>
+&nbsp;-&nbsp; 객체 구성(Composition)을 사용한다.<br>
 &nbsp;-&nbsp; Client에서 Adapter의 method를 호출하면 Adaptee 변수의 메소드에게 할일을 위임한다.<br>
 &nbsp;-&nbsp; Adaptee의 모든 서브클래스에 Adapter를 쓸 수 있다는 장점이 있다.<br>
 &nbsp;-&nbsp; Client를 특정 구현이 아닌 인터페이스에 연결한다.<br>
@@ -89,8 +89,6 @@ public class DuckTestDrive {
 | 부모 클래스의 구현에 의존 결합도가 높음 | 구현에 의존하지 않음<br>내부에 포함되는 객체의 구현이 아닌 인터페이스에 의존 |
 | 클래스 사이의 정적인 관계 | 객체 사이의 동적인 관계 |
 | 부모 클래스 안에 구현된 코드 자체를 물려 받아 재사용 | 포함되는 객체의 퍼블릭 인터페이스를 재사용 |
-
-&ast; Public Interface : 책임을 나타내는 일종의 설명서<br>
 
 Adapter Pattern의 특징
 1. 적용 가능성<br>
