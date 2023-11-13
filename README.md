@@ -69,3 +69,8 @@
     - 8장 : Template Method Pattern (김현기)
     - 9장 : Iterator Pattern and Composite Pattern (장예진)
     - 10장 : State Pattern (전다빈)
+- 2023-11-18 AM 11 : 00 ( 장소 : [다옴스터디](http://daomstudy.com/?doc=sub_location) )
+    - 11장 : Proxy Pattern (전다빈)
+    - 12장 : 복합 패턴 (이은영)
+    - 13장 : 실전 디자인 패턴 - 패턴과 행복하게 살아가기 (김현기)
+    - 14장 + 1장 : 기타 패턴 - 다양한 패턴 빠르게 알아보기 (장예진)
