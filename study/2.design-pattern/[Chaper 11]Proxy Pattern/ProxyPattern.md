@@ -59,7 +59,7 @@ public class 서버테스트{
 
 ```java
 public class 뽑기기계 모니터 {
-	원격 뽑기기계 machine; // 원격 뽑기 기계 인터페이스를 구성
+    원격 뽑기기계 machine; // 원격 뽑기 기계 인터페이스를 구성
     public 뽑기기계 모니터(원격 뽑기기계 machine){
     	this.machine = machine;
     }
@@ -224,7 +224,7 @@ Handler의 구현을 살펴보기전에 중간 정리를 해보도록 합시다.
 ```java
 	메인{
  		Person 철수 = new Person("철수",0);
-        Person 영희 = new Person("영희",0);
+        	Person 영희 = new Person("영희",0);
  		Person 철수의 본인 프록시 = getOwnerProxy(철수);
         // 본인 프록시는 철수가 자기의 호감 지수를 변경하지 못하도록 합니다.
         
