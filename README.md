@@ -1,14 +1,14 @@
 ## Study
 
-| title          | type |                    |
-|:---------------|------|:-------------------|
-| network        | Book | IT엔지니어를 위한 네트워크 입문 |
-| design-pattern | Book | 헤드퍼스트 디자인패턴        |
-
+| type   | title          | description        |
+|--------|:---------------|:-------------------|
+| Book   | Network        | IT엔지니어를 위한 네트워크 입문 |
+| Book   | Design Pattern | 헤드퍼스트 디자인패턴        |
+| Search | Data Base      | 주제 기반의 문서 정리       |
 
 <hr>
 
-### schedule (일정)
+## schedule (일정)
 
 <details>
 <summary>network</summary>
@@ -51,8 +51,6 @@
 <details>
 <summary>design-pattern</summary>
 <div markdown="1">
-</div>
-</details>
 
 - 2023-10-07 AM 11 : 00 ( 장소 : [모어스터디](https://map.naver.com/p/entry/place/37898582?c=15.00,0,0,0,dh) )
     - 1장 : 디자인패턴의 소개   (이은영)
@@ -74,3 +72,25 @@
     - 12장 : 복합 패턴 (이은영)
     - 13장 : 실전 디자인 패턴 - 패턴과 행복하게 살아가기 (김현기)
     - 14장 + 1장 : 기타 패턴 - 다양한 패턴 빠르게 알아보기 (장예진)
+
+</div>
+</details>
+
+### Database
+
+장소 : [다옴스터디](http://daomstudy.com/?doc=sub_location)<br>
+**2023-12-02 AM 11 : 00**
+
+- ch1 : subject ( name )
+- ch2 : subject ( name )
+- ch3 : subject ( name )
+- ch4 : subject ( name )
+
+------
+
+### 규칙
+
+- 일정은 약속 시간을 지키기 위해 최대한 노력
+- 맞은 발표 주제에 대해 책임감을 가지고 준비
+- 주제 스터디 비용 정산 후 개인적 사유에 대한 불참은 스터디 비용 반환 X
+
