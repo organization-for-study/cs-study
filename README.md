@@ -80,11 +80,10 @@
 
 장소 : [다옴스터디](http://daomstudy.com/?doc=sub_location)<br>
 **2023-12-02 AM 11 : 00**
-
-- ch1 : subject ( name )
-- ch2 : subject ( name )
-- ch3 : subject ( name )
-- ch4 : subject ( name )
+- ch1 : 데이터베이스 관리 시스템(DBMS)의 기본 개념 ( 장예진 )
+- ch2 : 관계형 데이터베이스 모델 ( 전다빈 )
+- ch3 : 디비의 종류 ( 김현기 )
+- ch4 : 데이터 모델링과 설계 ( 이은영 )
 
 ------
 
