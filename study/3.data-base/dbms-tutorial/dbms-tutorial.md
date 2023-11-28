@@ -93,6 +93,7 @@
 <br>
 
 > **출처** <br>
-> [데이터베이스 기본 구조] (https://dobby-the-house-elf.tistory.com/85) <br>
-> [컬럼과 필드 차이] (https://hoyashu.tistory.com/6) <br>
-> [DBMS 개념] (https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/)
+> <a href="https://velog.io/@cil05265/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EA%B0%9C%EC%9A%94%EA%B0%9C%EB%85%90-%EA%B8%B0%EB%8A%A5-%EC%8A%A4%ED%82%A4%EB%A7%88DBMS-RDBMS">데이터베이스개념</a> <br>
+> <a href="https://dobby-the-house-elf.tistory.com/85">데이터베이스 기본 구조</a><br>
+> <a href="https://hoyashu.tistory.com/6">컬럼과 필드 차이</a> <br>
+> <a href="https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/">DBMS 개념</a>
