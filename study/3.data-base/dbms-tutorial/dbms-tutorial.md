@@ -46,7 +46,9 @@
    - 테이블이 가지고 있는 Column의 수 
 6. 카디널리트(Cardinality)
    - 테이블이 가지고 있는 Row의 수
-     
+
+<br>
+
 ### 데이터베이스 관리 시스템의 정의와 종류
 #### 데이터베이스 관리 시스템 정의와 종류
 1. 정의 <br>
@@ -97,6 +99,8 @@
       | DB2 | IBM | Unix, Linux, Windows | 메인프레임 시장 점유율 1위 |
       | Access | Microsoft | Windows | PC용 |
       | SQLite | SQLite | Android, IOS | 모바일 전용, 오픈 소스(무료) |
+
+<br>
 
 ### 데이터베이스 관리 시스템의 발전 과정.
 #### 데이터베이스 관리 시스템의 발전 과정.
