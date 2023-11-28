@@ -3,16 +3,39 @@
 ### 데이터베이스의 개념
 #### 데이터베이스 개념
 1. 정의
-   - 응용 시스템들이 데이터를 공유할 수 있도록 운영에 필요한 모든 데이터를 통합하여 컴퓨터에 저장한 데이터를 의미
-   - 많은 인원, 다수의 시스템 또는 다수의 프로그램이 사용할 목적으로 통합하여 관리되는 자료의 집합
-   - 자료의 중복성 제거, 무결성 확보, 일관성 유지, 유용성 보장은 데이터베이스 관리의 핵심
+   - 데이터들을 저장하고 조회하는 프로그램
+2. 데이터베이스 데이터 특징
+   - 통합된 데이터
+      - 중복된 정보에 대해서 데이터를 통합하여 자료의 중복을 최소화한 데이터의 모임
+   - 저장된 데이터
+      - 컴퓨터가 접근할 수 있는 매체에 데이터 저장
+   - 운영 데이터
+      - 조직의 목적을 위해 존재하고 활용되는 운영 데이터를 다루는데 주로 이용
+   - 공유 데이터
+      - 여러 사람들이 공유하고 사용할 목적으로 통합 관리되는 데이터
 2. 기능
-   - 여러 사용자 간의 데이터를 공유할 수 있음
-   - 데이터의 중복성을 통제
-   - 사용자들에게 다양한 인터페이스 제공
-   - 권한 없는 사용자의 데이터 접근을 통제
-   - 데이터 간에 존재하는 복잡한 관련성을 쉽게 표현
-   - 데이터 간의 무결성을 보장하며, 백업과 복원 기능을 제공
+   - 실시간 접근성
+      - 사용자의 요구에 신속하고 정확하게 응답이 가능해야 함
+   - 계속적인 변화
+      - 현실 세계의 변화를 반영하기 위해 새로운 데이터의 삽입, 삭제, 갱신으로 항상 최신 데이터를 유지하는 것
+   - 동시 공용
+      - 다수의 사용자가 동시에 같은 내용의 데이터를 이용할 수 있어야 함 
+   - 내용에 의한 참조
+      - 데이터베이스에 있는 데이터를 참조할 때 사용자의 요구에 따른 데이터 내용을 데이터의 위치나 주소로 찾음
+3. 데이터베이스의 언어 SQL
+   - 관계형 데이터베이스에서 데이터를 정의하고 조작하고 제어할 수 있는 표준 언어
+   - DDL(Data Definition Language)
+      - 테이블과 같은 데이터 구조를 정의하는데 사용하는 명령어들
+      - CREATE, ALTER, DROP, RENAME, TRUNCATE
+   - DML(Data Manipulation Language)
+      - 데이터를 조회, 변형하는 명령어들
+      - SELECT, INSERT, UPDATE, DELETE
+   - DCL(Data Control Language)
+      - 데이터베이스에 접근하고 객체들을 사용하도록 권한을 주고 회수하는 명령어들
+      - GRANT, REVOKE
+   - TCL(TRansaction Control Language)
+      - 논리적인 작업의 단위를 묶어서 DML에 의해 조작된 결과를 작업단위(트랜잭션) 별로 제어하는 명령어들
+      - COMMIT, ROLLBACK, SAVEPOINT 
 
 #### 데이터베이스 기본 구조
 1. 스키마 (Schema)
@@ -129,32 +152,55 @@
 
 ### 데이터베이스 관리 시스템의 발전 과정.
 #### 데이터베이스 관리 시스템의 발전 과정.
-1. 발전 과정
-   - 계층형 DBMS <br>
+1. 발전 과정 <br>
+   | 구분 | 모델 | DMBS |
+   |:---:|:---:|:---:|
+   | 1세대 | 파일시스템 | ISAM <br> VSAM |
+   | 2세대 | 계층형 DBMS (HDBMS) | IMS <br> System2000 |
+   | 3세대 | 네트워크형 DBMS (NDBMS) | IDS <br> TOTAL <br> IDMS |
+   | 4세대 | 관계형 DBMS (RDBMS) | Oracle <br> My-SQL <br> DB2 <br> SQL Server <br> Sybase |
+   | 5세대 | 객체지향형 DBMS (ODBMS) | Object Store <br> UniSQL | <br>
+   
+   - 계층형 DBMS (HDBMS) <br>
      <img src = "https://hongong.hanbit.co.kr/wp-content/uploads/2021/11/%EA%B3%84%EC%B8%B5%ED%98%95DBMS.png" width ="60%"> <br>
      - 처음으로 등장한 DBMS 개념으로 1960년대에 시작되었음
      - 각 계층은 트리 형태를 갖음
      - 처음 구성을 완료한 후에 이를 변경하기가 까다로움
      - 다른 구성원을 찾아가는 것이 비효율적
      - 지금은 사용하지 않는 형태 <br>
-   - 망형 DMBS <br>
+   - 네트워크형 DMBS (NDBMS)<br>
      <img src = "https://hongong.hanbit.co.kr/wp-content/uploads/2021/11/%EB%A7%9D%ED%98%95DBMS.png" width ="60%"> <br>
      - 계층형 DBMS의 문제점을 개선하기 위해 1970년대에 등장
      - 하위에 있는 구성원들끼리도 연결된 유연한 구조
      - 망형 DBMS를 잘 활용하려면 프로그래머가 모든 구조를 이해해야만 프로그램 작성이 가능하다는 단점이 있음
      - 지금 거의 사용하지 않는 형태 <br>
-   - 관계형 DBMS <br>
+   - 관계형 DBMS (RDBMS)<br>
      <img src = "https://hongong.hanbit.co.kr/wp-content/uploads/2021/11/sql_table.png" width ="60%"> <br>
-     - Relational DBMS = RDBMS
+     - Relational DBMS
      - 대부분의 DMBS가 RDBMS 형태로 사용됨
      - 테이블로 이루어져있으며, 테이블은 열과 행으로 이루어져 있음 (테이블은 RDMBS의 최소 단위) <br>
-2. 언어 분류 <br>
+   - 객체지향형 DBMS (ODBMS)<br>
+     <img src = "https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2023/01/Object-Oriented-Database-Model-in-DBMS.webp" width ="60%"> <br>
+     - 1980년대에 개발된 DBMS
+     - 데이터를 객체의 형태로 표현하는 방식
+     - 객체지향 프로그래밍 언어와 호환성이 높고 복잡한 데이터 타입을 지원함
+     - 성능이 낮고 표준화가 부족하고 SQL과 호환되지 않음
+   - No SQL <br>
+     <img src = "https://learn.microsoft.com/ko-kr/dotnet/architecture/cloud-native/media/types-of-nosql-datastores.png" width ="60%"> <br>
+     - Not Only SQL
+     - 2000년대에 개발된 DBMS
+     - 테이블 형태의 관계형 모델이 아닌 여러가지 모델로 데이터를 표현하는 방식
+     - 어느 한가지 형태의 데이터베이스를 지칭하지 않고, RDBMS의 테이블 형태가 아닌 형태를 띈 DB를 총칭
+     - RDMS보다 확장성과 가용성이 높고 유연한 스키마를 가짐
+     - 대용량 데이터나 분산 처리에 매우 빠르게 대응 가능
+     - 데이터의 일관성은 보장되지 않고 기존 SQL과 호환되지 않음
+3. 언어 분류 <br>
    <img src = "https://hongong.hanbit.co.kr/wp-content/uploads/2021/11/DBMS-%EC%A0%9C%ED%92%88.png" width ="60%"> <br>
 
 <br>
 
 > **출처** <br>
-> <a href="https://velog.io/@cil05265/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EA%B0%9C%EC%9A%94%EA%B0%9C%EB%85%90-%EA%B8%B0%EB%8A%A5-%EC%8A%A4%ED%82%A4%EB%A7%88DBMS-RDBMS">데이터베이스개념</a> <br>
 > <a href="https://dobby-the-house-elf.tistory.com/85">데이터베이스 기본 구조</a><br>
 > <a href="https://hoyashu.tistory.com/6">컬럼과 필드 차이</a> <br>
-> <a href="https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/">DBMS 개념</a>
+> <a href="https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/">DBMS 개념</a> <br>
+> <a href="https://inpa.tistory.com/entry/DB-%F0%9F%93%9A-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B8%B0%EC%B4%88-%EA%B0%9C%EB%85%90">데이터베이스 개념, DBMS 발전 과정</a>
