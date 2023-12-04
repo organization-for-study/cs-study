@@ -13,8 +13,8 @@
   - 트랜잭션이 시작되기 이전의 상태로 되돌린다. 즉, 마지막 커밋을 완료한 시점으로 다시 되돌아간다.
   - 트랜잭션은 All or Nothing 방식으로 DML 명령어들을 처리한다.
  
-#### 트랜잭션 작동 원리 (생명주기)
-<img src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ2V31%2Fbtr2sWO3f50%2FyEz1vGCsYmKs9ao4Vnj8KK%2Fimg.png" width="70%"/>
+#### 트랜잭션 작동 원리 (생명주기) <br>
+<img src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ2V31%2Fbtr2sWO3f50%2FyEz1vGCsYmKs9ao4Vnj8KK%2Fimg.png" width="70%"/> <br>
 - 활성화 (Activate)
   - 트랜잭션 실행 중 첫 상태이다.
   - 트랜잭션은 명령이 수행되는 동안 활성화된다.
