@@ -70,7 +70,7 @@
       - DIRTY READ 현상이 발생하지 않는다.
       - 커밋하기 전 다른 트랜잭션에서 조회시 UNDO 영역의 백업된 레코드에서 결과를 가져온다.
       - NON_REPEATABLE READ 문제가 발생할 수 있다.
-    - NON_REPEATABLE READ
+    - *_NON_REPEATABLE READ_*
       - 한 트랜잭션 안에 똑같은 READ를 실행했을 때 항상 같은 결과를 가져오지 않는 현상이다.
       - Lock을 통해 동시성을 제어하는 방식에서는 Select 쿼리 실행 시 Read Lock을 획득하지 않거나, 획득한 Lock이 Select 쿼리를 실행하자마자 해제될 때 발생한다. <br>
       <img src = "https://velog.velcdn.com/images/chiyongs/post/a78d2b5e-618d-4de5-886c-653ed6dbef79/image.png" width = "70%"/> <br>
@@ -84,7 +84,7 @@
       - 트랜잭션 범위 내에서 조회한 내용이 항상 동일함을 보장하는 트랜잭션 격리 수준이다.
       - MySQL의 InnoDB에서 기본으로 사용하는 트랜잭션 격리 수준이다.
       - Phantom Read 문제가 발생할 수 있다.
-    - PHANTOM READ
+    - *_PHANTOM READ_*
       -  다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안 보였다가 하는 현상이다.
       -  NON_REPEATABLE READ의 경우 중 하나이며 , Transaction A가 범위를 조회하는 쿼리를 반복적으로 사용할 때, 그 쿼리들 사이에서 Transaction B가 해당 쿼리를 만족하는 새로운 행을 생성했을 때 발생한다.
       -  InnoDB는 index-row locking 과 gap locking을 섞은 next-key locking 알고리즘을 사용하고 있어 Repeatable Read에서도 Phantom Read를 예방할 수 있다.
