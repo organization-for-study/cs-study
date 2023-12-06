@@ -141,7 +141,7 @@
   - 확장 단계
     - 트랜잭션은 새로운 lock O, unlock X
   - 축소 단계
-    - 트랜잭션은 새로운 lock X, unlock X
+    - 트랜잭션은 새로운 lock X, unlock O
   - 엄격한 2단계 잠금 규약
     - 2단계 잠금 규약에서 발생하는 연쇄복귀 문제를 해결한다.
 - Timestamp Ordering
