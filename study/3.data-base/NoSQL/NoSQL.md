@@ -7,12 +7,11 @@
 &nbsp;-&nbsp; 테이블 단위로 구분하여 데이터 저장<br>
 &nbsp;-&nbsp; 트랜잭션을 통한 ACID(원자성, 일관성, 격리성, 지속성) 보장<br>
 &nbsp;-&nbsp; JOIN 등 복잡한 조건을 포함하는 데이터 검색 가능<br>
-<br>
 - NoSQL<br>
 &nbsp;-&nbsp; 비정형 데이터 관리<br>
 &nbsp;-&nbsp; 클러스터 환경에서의 확장성<br>
 &nbsp;-&nbsp; 빅데이터 저장과 처리<br>
-<br>
+
 &xrarr; 대량의 데이터 처리를 위해 관계 데이터베이스를 대신할 새로운 대안으로 NoSQL이 제시되었다.<br>
 &xrarr; NoSQL은 Not Only SQL의 약자로 관계 데이터베이스만 고집하지 말고 필요에 따라 다른 특성을 제공하는 데이터베이스를 사용하는 것이 좋다는 의미로 이해하는 것이 적절하다.<br>
 <br>
@@ -36,7 +35,7 @@
 &nbsp;-&nbsp; 관계 데이터 모델보다 융통성 있는 데이터 모델을 사용한다.<br>
 &nbsp;-&nbsp; 스키마 없이 동작하기 때문에 데이터 구조를 미리 정의할 필요가 없다.<br>
 &nbsp;-&nbsp; 데이터 구조를 수시로 변경할 수 있다.<br>
-<br>
+
 &xrarr; 관계 데이터베이스와 NoSQL의 사용 목적이 다르기 때문에 NoSQL을 관계 데이터베이스의 경쟁자로 볼 필요는 없다.<br>
 <br>
 1&rpar; 장점<br>
@@ -59,19 +58,17 @@ CAP 이른<br>
 2. 가용성(Availability) : 모든 요청이 응답을 받을 수 있어야 한다는 것을 의미힌다. 즉, 시스템이 중단되는 일 없이 언제든지 사용 가능한 상태여야 한다는 것이다.
 3. 분할 허용성(Partitioning tolerance) : 분할이란 노드 간 통신이 끊어지는 것을 말하며, 분할 허용성이란 시스템 내 분할이 생기더라도 시스템이 여전히 동작하는 것을 의미한다. 즉, 한 노드가 다른 노드와 통신할 수 없을 때 다른 복제 노드가 사용자 요청에 응답할 수 있어야 한다. 분할 허용성은 분산 데이터베이스 시스템에서 필수적이다.
 <br>
-
-<br>
 CP 시스템 VS AP 시스템<br>
 &nbsp;-&nbsp; 시스템은 네트워크 장애나 여러 가지 원인들로 인해 장애가 발생할 수 밖에 없다. 그러므로 분산 데이터베이스 시스템은 반드시 분할 허용성을 가지고 있어야 하며, 일관성과 가용성 중 하나를 선택해야만 한다.<br>
 <br>
 1&rpar; CP 시스템 - MongoDB<br>
 <br>
-<img src="cp_system_mongodb.png" /><br>
+<img src="cp_system_mongodb.png" style="width:60%;"/><br>
 MongoDB는 데이터를 하나 혹은 여러 개의 Primary Node에 이진 JSON 형태로 저장한다. 각 Primary Node는 여러 개의 Secondary Node(복제본)를 가진다. Primary Node가 중단될 경우 Secondary Node 중 하나가 Primary Node로 올라가야 하는데 그 전까지 시스템은 모든 쓰기 작업이 불가능한 상태가 된다.<br>
 <br>
 2&rpar; AP 시스템 - Cassandra<br>
 <br>
-<img src="ap_system_cassandra.png" /><br>
+<img src="ap_system_cassandra.png" style="width:60%;" /><br>
 Cassandra는 Primary Node 없이 모든 Node가 읽기와 쓰기 작업을 수행할 수 있고, 복제본을 분리된 다른 노드에 저장한다. 한 Node가 다른 Node와 통신할 수 없는 상황에서 해당 Node는 여전히 읽기 작업과 쓰기 작업을 수행할 수는 있으나 데이터가 다른 Node와 일치하지 않는 상태, 즉 일관성이 깨진 상태가 된다. 이를 최종적 일관성(Eventual Consistency)을 통해 추후에 복구한다.<br>
 <br>
 최종적 일관성(Eventual Consistency)란<br>
