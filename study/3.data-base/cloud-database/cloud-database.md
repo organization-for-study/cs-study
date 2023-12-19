@@ -9,7 +9,7 @@
 
 #### 클라우드 컴퓨팅 특징
 - 셀프 프로비저닝(provisioning)
-  - 최종 사용자들은 어떠한 종류의 워크 로드에 대해서도 컴퓨팅 리소스를 원하는 만큼 활용할 수 잇다.
+  - 최종 사용자들은 어떠한 종류의 워크 로드에 대해서도 컴퓨팅 리소스를 원하는 만큼 활용할 수 있다.
   - 최종 사용자는 서버 이용 시간 및 스토리지와 같은 컴퓨팅 리소스를 프로비저닝 할 수 있다.
     > 프로비저닝 : 할당하고 준비하는것
 - 탄력성
@@ -19,7 +19,7 @@
 - 워크 로드 회복탄력성
   - 리소스 리던던시(이중성) 기능을 많이 제공하고 있기 때문에 스토리지를 복원할 수 있고, 기업들의 중요한 워크 로드가 안전하게 운영될 수 있도록 해준다.
 - 유연한 마이그레이션
-  - 다른 시스템이나 클라우드 서비스로 마이그레이션을 하는 경우에도 특정한 워크로드를 다른 시스템으로 옮기는 작업을 간편하게 할 수 있다/
+  - 다른 시스템이나 클라우드 서비스로 마이그레이션을 하는 경우에도 특정한 워크로드를 다른 시스템으로 옮기는 작업을 간편하게 할 수 있다.
 - 폭넓은 네트워크 접근성
   - 사용자는 인터넷만 연결된다면 어떤 기기라도 관계없이 클라우드 데이터에 접근하거나 데이터를 업로드할 수 있다.
 - 멀티 테넌시(Multi-tenancy) 및 리소스 풀링(Resource pooling)
@@ -66,7 +66,12 @@
 #### 클라우드 데이터베이스 단점
 - 규모가 작을수록 상응하는 비용이 상대적으로 크다.
 
-> 클라우드 컴퓨팅 개념 : https://velog.velcdn.com/images/jaden_94/post/ba3283ce-6405-4bf9-abfc-3711813c83de/unnamed.png
-> 클라우드 컴퓨팅 : https://yozm.wishket.com/magazine/detail/136/
-> 클라우드 데이터베이스 개념 : https://www.ibm.com/kr-ko/topics/cloud-database
-> 장단점 : https://gggggeun.tistory.com/71
+#### 클라우드 데이터베이스 종류
+- AWS, Google Cloud, Azure, Firebase, MongoDB Atlas
+
+
+**출처**
+> <a href = "https://velog.velcdn.com/images/jaden_94/post/ba3283ce-6405-4bf9-abfc-3711813c83de/unnamed.png "> 클라우드 컴퓨팅 개념</a><br>
+> <a href = "https://yozm.wishket.com/magazine/detail/136/"> 클라우드 컴퓨팅</a> <br>
+> <a href = "https://www.ibm.com/kr-ko/topics/cloud-database"> 클라우드 데이터베이스 개념 </a> <br>
+> <a href = "https://gggggeun.tistory.com/71"> 장단점 </a> <br>
