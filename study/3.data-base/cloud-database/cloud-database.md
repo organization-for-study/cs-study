@@ -46,8 +46,15 @@
 - 클라우드 플랫폼을 통해 구축 및 액세스되는 데이터베이스 서비스
 - 엔터프라이즈 사용자가 전용 하드웨어를 구매하지 않고도 데이터베이스를 호스팅할 수 있다.
 - 사용자가 관리하거나 서비스로 제공되어 공급자가 관리할 수 있다.
-- 관계형 데이터베이스 및 NoSQL 데이터베이스를 지원할 수 있다.
 - 웹 인터페이스 또는 공급업체가 제공하는 애플리케이션 프로그래밍 인터페이스(API)를 통해 액세스가 가능하다.
+
+#### 클라우드 데이터베이스 분류
+- Relational cloud database
+- NoSQL cloud database
+- Cloud data warehouse
+- HTAP(Hybrid Transactional Analytical Processing)
+  - NoSQL 기반
+  - 트랜잭션 + 분석
 
 #### 클라우드 데이터베이스 장점
 - 분리된 환경의 데이터베이스 구축
