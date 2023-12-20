@@ -29,6 +29,10 @@
 
 ### 클라우드 데이터베이스
 
+#### DBaaS(서비스형 데이터베이스)
+> 조직이 요금 기반 구독 서비스를 통해 클라우드 서비스 제공자와 계약을 체결하는 방식 <br>
+- 서비스 공급자는 최종 사용자에게 다양한 실시간 운영, 유지 관리, 관리 및 데이터베이스 관리 작업을 제공한다. 이때 데이터베이스는 서비스 제공자의 인프라에서 실행된다.
+
 #### 클라우드 데이터베이스란?
 > 클라우딩 컴퓨팅 플랫폼을 통해 구축되고 액세스되는 데이터베이스 서비스
 - 내부 서버의 기존 데이터베이스와 동일한 기능과 성능을 제공
@@ -73,12 +77,20 @@
 #### 클라우드 데이터베이스 단점
 - 규모가 작을수록 상응하는 비용이 상대적으로 크다.
 
-#### 클라우드 데이터베이스 종류
-- AWS, Google Cloud, Azure, Firebase, MongoDB Atlas
-
+#### 클라우드 데이터베이스
+1. Amazon Web Service
+2. SAP
+3. EnterpriseDB
+4. Garantia Data
+5. Cloud SQL by Google
+6. Azure by Microsoft
 
 **출처**
 > <a href = "https://velog.velcdn.com/images/jaden_94/post/ba3283ce-6405-4bf9-abfc-3711813c83de/unnamed.png "> 클라우드 컴퓨팅 개념</a><br>
 > <a href = "https://yozm.wishket.com/magazine/detail/136/"> 클라우드 컴퓨팅</a> <br>
 > <a href = "https://www.ibm.com/kr-ko/topics/cloud-database"> 클라우드 데이터베이스 개념 </a> <br>
 > <a href = "https://gggggeun.tistory.com/71"> 장단점 </a> <br>
+> <a href = "https://www.simplilearn.com/cloud-databases-across-the-globe-article"> 순위 </a> <br>
+
+**추천 내용**
+> <a href="https://yozm.wishket.com/magazine/detail/2146/"> 쿠팡 클라우드데이터베이스로 변경 </a>
