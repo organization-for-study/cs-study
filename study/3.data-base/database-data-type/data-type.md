@@ -1,0 +1,7 @@
+## MYSQL - JSON Type
+  
+## DB별 Boolean 처리
+
+## CHAR vs NVARCHAR 
+
+## NVARCHAR 과 utf-8
