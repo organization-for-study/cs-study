@@ -1,11 +1,11 @@
 ## Study
 
-| type   | title          | description        |
-|--------|:---------------|:-------------------|
-| Book   | Network        | IT엔지니어를 위한 네트워크 입문 |
-| Book   | Design Pattern | 헤드퍼스트 디자인패턴        |
-| Search | Data Base      | 주제 기반의 문서 정리       |
-| Book   | Java | Modern Java in Action(모던 자바 인 액션)        |
+| type   | title          | description                       |
+|--------|:---------------|:----------------------------------|
+| Book   | Network        | IT엔지니어를 위한 네트워크 입문                |
+| Book   | Design Pattern | 헤드퍼스트 디자인패턴                       |
+| Search | Data Base      | 주제 기반의 문서 정리                      |
+| Book   | Java           | Modern Java in Action(모던 자바 인 액션) |
 
 <hr>
 
@@ -101,8 +101,8 @@
 - 장소/시간 : 다옴스터디 / AM 11:00
 
 
-- 24/01/24 
-  - ch1 / ch2 읽기 
+- 24/01/24
+    - ch1 / ch2 읽기
 
 ------
 
