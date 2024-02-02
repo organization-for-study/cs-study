@@ -29,7 +29,6 @@ inventory.sort(Apple::getWeight());
 3. 기존 객체의 인스턴스 메서드 참조<br>
 → expensiveTransaction::getValue (Transaction 객체를 할당받은 expensiveTransaction 지역변수)
 <br>
-<br>
 
 ```java
 // 헬퍼 메서드
@@ -60,7 +59,6 @@ filter(words, this::isValidName);
 
 3. Predicate&lt;String&gt; startsWithNumber = (String string) -> this.startsWithNumber(string);<br>
 → Predicate&lt;String&gt; startsWithNumber = this::startsWithNumber;
-<br>
 <br>
 
 #### 생성자 참조
