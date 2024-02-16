@@ -330,7 +330,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
 2. HashTable
 - key와 value에 null을 허용하지 않음
 - Multi-Thread 환경에서 Thread-safe함<br>
-→ get(), put(), remove()에 synchronzied 키워드 사용
+→ get(), put(), remove()에 synchronzied 키워드 사용<br>
 → synchronized Lock 문제로 데이터 처리가 매우 느리다(병목 현상 발생 등)
 
 ```java
@@ -410,7 +410,7 @@ ConcurrentHashMap 클래스는 ConcurrentHashMap을 집합 뷰로 반환하는 k
 
 
 출처 
-- 향상된 for문 : https://javanitto.tistory.com/38
+- iterator 분석 : https://javanitto.tistory.com/10
 - ConcurrentHashMap : https://parkmuhyeun.github.io/woowacourse/2023-09-09-Concurrent-Hashmap/
 - ConcurrentHashMap 개념 및 동기화 동작 원리 : https://wildeveloperetrain.tistory.com/271
 - ConcurrrentHashMap java : https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java
