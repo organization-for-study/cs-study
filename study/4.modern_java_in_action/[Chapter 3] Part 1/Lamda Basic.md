@@ -64,7 +64,6 @@ public static process(Runnable r){
 process(r1);
 process(r2);
 process(()-> System.out.println(yejin));
-
 ```
 
 함수형 인터페이스 내 추상 메서드의 시그니처는 람다 표현식의 시그니처를 가리킵니다.

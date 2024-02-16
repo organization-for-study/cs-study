@@ -1,6 +1,7 @@
 ## Chapter3 람다 표현식 (part 6~9)
 
 ### 메서드 참조
+
 메서드 참조를 이용하면 기존의 메서드 정의를 재활용해서 람다처럼 전달할 수 있다.
 
 ```java
@@ -12,23 +13,27 @@ inventory.sort(Apple::getWeight());
 
 ※ 람다와 메서드 참조 단축 표현 예제
 |람다|메서드 참조 단축 표현|
-|---|---|
-|(Apple apple) -> apple.getWeight()|Apple::getWeight|
-|() -> Thread.currentThread().dumpStack()|Thead.currentThread()::dumpStack|
-|(str, i) -> str.substring(i)|String::substring|
-|(String s) -> System.out.println(s)<br>(String s) -> this.isValidName(s)|System.out::println<br>this::isValidName|
+
+| T                                                                        | Ex                                       |
+|--------------------------------------------------------------------------|------------------------------------------|
+| (Apple apple) -> apple.getWeight()                                       | Apple::getWeight                         | 
+| () -> Thread.currentThread().dumpStack()                                 | Thead.currentThread()::dumpStack         |
+| (str, i) -> str.substring(i)                                             | String::substring                        |
+| (String s) -> System.out.println(s)<br>(String s) -> this.isValidName(s) | System.out::println<br>this::isValidName |
+
 <br>
 
 * 메서드 참조를 만드는 방법
+
 1. 정적 메서드 참조<br>
-→ Integer::parseInt
+   → Integer::parseInt
 
 2. 다양한 형식의 인스턴스 메서드 참조<br>
-→ String::length
+   → String::length
 
 3. 기존 객체의 인스턴스 메서드 참조<br>
-→ expensiveTransaction::getValue (Transaction 객체를 할당받은 expensiveTransaction 지역변수)
-<br>
+   → expensiveTransaction::getValue (Transaction 객체를 할당받은 expensiveTransaction 지역변수)
+   <br>
 
 ```java
 // 헬퍼 메서드
@@ -52,17 +57,18 @@ filter(words, this::isValidName);
 ※ 퀴즈(메서드 참조)
 
 1. ToIntFunction&lt;String&gt; stringToInt = (String s) -> Integer.parseInt(s);<br>
-→ Function<String, Integer> stringToInt = Integer::parseInt;
+   → Function<String, Integer> stringToInt = Integer::parseInt;
 
 2. BiPredicate&lt;List&lt;String&gt;, String&gt; contains = (list, element) -> list.contains(element);<br>
-→ BiPredicate&lt;List&lt;String&gt;, String&gt; contains = List::contains;
+   → BiPredicate&lt;List&lt;String&gt;, String&gt; contains = List::contains;
 
 3. Predicate&lt;String&gt; startsWithNumber = (String string) -> this.startsWithNumber(string);<br>
-→ Predicate&lt;String&gt; startsWithNumber = this::startsWithNumber;
-<br>
+   → Predicate&lt;String&gt; startsWithNumber = this::startsWithNumber;
+   <br>
 
 #### 생성자 참조
-ClassName::new처럼 클래스명과 new 키워드를 이용해서 기존 생성자의 참조를 만들 수 있다. 
+
+ClassName::new처럼 클래스명과 new 키워드를 이용해서 기존 생성자의 참조를 만들 수 있다.
 
 ```java
 // 람다 표현식은 디폴트 생성자를 가진 Apple을 만든다.
@@ -89,6 +95,7 @@ Apple a2 = c2.apply(110);
 ※ 퀴즈(생성자 참조)
 
 1. Color(int, int, int)처럼 인수가 세 개인 생성자의 생성자 참조를 사용하려면 어떻게 해야 할까?
+
 ```java
 public interface TriFunction<T, U, V, R> {
     R apply(T t, U u, V v);
@@ -97,49 +104,67 @@ public interface TriFunction<T, U, V, R> {
 TriFunction<Integer, Integer, Integer, Color> colorFactory = Color::new;
 ```
 
-→ 생성자 참조 문법은 ClassName::new이므로 Color 생성자의 참조는 Color::new가 된다. 하지만 이를 사용하려면 생성자 참조와 일치하는 시그니처를 갖는 함수형 인터페이스가 필요하다. 현재 이런 시그니처를 갖는 함수형 인터페이스는 제공되지 않으므로 우리가 직접 다음과 같은 함수형 인터페이스를 만들어야 한다.
+→ 생성자 참조 문법은 ClassName::new이므로 Color 생성자의 참조는 Color::new가 된다. 하지만 이를 사용하려면 생성자 참조와 일치하는 시그니처를 갖는 함수형 인터페이스가 필요하다. 현재 이런
+시그니처를 갖는 함수형 인터페이스는 제공되지 않으므로 우리가 직접 다음과 같은 함수형 인터페이스를 만들어야 한다.
 
 ### 람다, 메서드 참조 활용하기
+
 1. 코드 전달<br>
-객체 안에 동작을 포함시키는 방식으로 다양한 전략을 전달할 수 있다.(동작 파라미터화)
+   객체 안에 동작을 포함시키는 방식으로 다양한 전략을 전달할 수 있다.(동작 파라미터화)
 
 ```java
 public class AppleComparator implements Comparator<Apple> {
     public int compare(Apple a1, Apple a2) {
-		return a1.getWeight() - a2.getWeight();
-	}
+        return a1.getWeight() - a2.getWeight();
+    }
 }
-inventory.sort(new AppleComparator());
+inventory.
+
+sort(new AppleComparator());
 ```
 
 2. 익명 클래스 사용<br>
-한 번만 사용할 코드는 익명 클래스를 이용하는 것이 좋다.
+   한 번만 사용할 코드는 익명 클래스를 이용하는 것이 좋다.
 
 ```java
 inventory.sort(new Comparator<Apple>() {
-    public int compare(Apple o1, Apple o2) {
-		return o1.getWeight() - o2.getWeight();
-	}
+    public int compare (Apple o1, Apple o2){
+        return o1.getWeight() - o2.getWeight();
+    }
 });
 ```
 
 3. 람다 표현식 사용<br>
-함수형 인터페이스를 기대하는 곳 어디에서나 람다 표현식을 사용할 수 있다.
+   함수형 인터페이스를 기대하는 곳 어디에서나 람다 표현식을 사용할 수 있다.
 
 ※ 함수형 인터페이스<br>
 오직 하나의 추상 메서드를 정의하는 인터페이스이다.
 
 ```java
-inventory.sort((Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));
+inventory.sort((Apple a1, Apple a2) ->a1.
+
+getWeight().
+
+compareTo(a2.getWeight()));
 
 // 자바 컴파일러는 람다의 파라미터 형식을 추론한다.
-inventory.sort((a1, a2) -> a1.getWeight().compareTo(a2.getWeight()));
+        inventory.
+
+sort((a1, a2) ->a1.
+
+getWeight().
+
+compareTo(a2.getWeight()));
 
 // Comparator는 Function 함수를 인수로 받는 정적 메서드 comparing을 포함한다.
 Comparator<Apple> c = Comparator.comparing((Apple a) -> a.getWeight());
 
 // 코드 가독성 향상
-inventory.sort(comparing(apple -> apple.getWeight()));
+inventory.
+
+sort(comparing(apple ->apple.
+
+getWeight()));
 ```
 
 4. 메서드 참조 사용
@@ -150,6 +175,7 @@ inventory.sort(comparing(Apple::getWeight));
 ```
 
 ### 람다 표현식을 조합할 수 있는 유용한 메서드
+
 Java 8 API의 몇몇 함수형 인터페이스는 다양한 유틸리티 메서드를 포함한다.<br>
 → 유틸리티 메서드를 이용하여 간단한 여러 개의 람다 표현식을 조합해서 복잡한 람다 표현식을 만들 수 있다.<br>
 → 디폴트 메서드(default method)<br>
@@ -171,24 +197,30 @@ Comparator<Apple> c = Comparator.comparing(Apple::getWeight);
 ```
 
 * 역정렬<br>
-사과의 무게를 내림차순으로 정렬하고 싶다면?
-→ Comparator 인터페이스의 reversed (default method) 사용
+  사과의 무게를 내림차순으로 정렬하고 싶다면?
+  → Comparator 인터페이스의 reversed (default method) 사용
 
 ```java
 // 무게를 내림차순으로 정렬
-invertory.sort(comparing(Apple::getWeight).reversed());
+invertory.sort(comparing(Apple::getWeight).
+
+reversed());
 ```
 
 * Comparator 연결<br>
-무게가 같은 두 사과가 존재한다면?<br>
-→ Comparator 인터페이스의 thenComparing (default method) 사용<br>
-→ 함수를 인수로 받아 첫 번째 비교자를 이용해서 두 객체가 같다고 판단되면 두 번째 비교자에 객체를 전달한다.
+  무게가 같은 두 사과가 존재한다면?<br>
+  → Comparator 인터페이스의 thenComparing (default method) 사용<br>
+  → 함수를 인수로 받아 첫 번째 비교자를 이용해서 두 객체가 같다고 판단되면 두 번째 비교자에 객체를 전달한다.
 
 ```java
 // 두 사과의 무게가 같으면 국가별로 정렬
 inventory.sort(comparing(Apple::getWeight)
-         .reversed()
-         .thenComparing(Apple::getCountry));
+         .
+
+reversed()
+         .
+
+thenComparing(Apple::getCountry));
 ```
 
 * Predicate 조합<br>
@@ -202,7 +234,7 @@ Predicate<Apple> redAndHeavyApple = redApple.and(apple -> apple.getWeight() > 15
 
 // Predicate 메서드를 연결해서 더 복잡한 Predicate 객체를 만든다.
 Predicate<Apple> redAndHeavyAppleOrGreen = redApple.and(apple -> apple.getWeight() > 150)
-                                                   .or(apple -> GREEN.equals(a.getColor()));
+        .or(apple -> GREEN.equals(a.getColor()));
 ```
 
 → 단순한 람다 표현식을 조합해서 더 복잡한 람다 표현식을 만들 수 있다.
@@ -233,6 +265,7 @@ int result = h.apply(1); // 3을 반환
 ```
 
 ### 비슷한 수학적 개념<br>
+
 * 적분<br>
 
 <img src="integrate.png" /><br>
@@ -242,22 +275,23 @@ int result = h.apply(1); // 3을 반환
 &nbsp;-&nbsp;integrate(x + 10, 3, 7) (X)<br>
 
 * Java 8 Lambda로 연결<br>
+
 1. 함수 f를 람다 표현식으로 구현할 수 있다.<br>
-&nbsp;-&nbsp;integrate((double x) -> x + 10, 3, 7)<br>
-&nbsp;-&nbsp;integrate((double x) -> f(x), 3, 7)<br>
+   &nbsp;-&nbsp;integrate((double x) -> x + 10, 3, 7)<br>
+   &nbsp;-&nbsp;integrate((double x) -> f(x), 3, 7)<br>
 
 2. C가 정적 메서드 f를 포함하는 클래스라 가정하면 메서드 참조를 사용해서 코드를 더 간단하게 만들 수 있다.<br>
-&nbsp;-&nbsp;integrate(C::f, 3, 7)
+   &nbsp;-&nbsp;integrate(C::f, 3, 7)
 
 integrate 메서드 구현
 
 ```java
 public double integrate(Doublefunction<Double> f, double a, double b) {
-	return (f.apply(a) + f.apply(b)) * (b-a) / 2.0;
+    return (f.apply(a) + f.apply(b)) * (b - a) / 2.0;
 }
 
 public double integrate(DoubleUnaryOperator f, double a, double b) {
-	return (f.applyAsDouble(a) + f.applyAsDouble(b)) * (b - a) / 2.0;
+    return (f.applyAsDouble(a) + f.applyAsDouble(b)) * (b - a) / 2.0;
 }
 ```
 
@@ -265,6 +299,7 @@ public double integrate(DoubleUnaryOperator f, double a, double b) {
 <br>
 
 출처
+
 - 모던 자바 인 액션
 - 적분 : https://dev-kani.tistory.com/38
 - 유틸리티 클래스 : https://spongeb0b.tistory.com/100
