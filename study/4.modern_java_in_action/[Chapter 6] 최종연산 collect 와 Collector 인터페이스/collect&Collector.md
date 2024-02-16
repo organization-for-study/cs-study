@@ -6,7 +6,7 @@ collect 에 우리가 원하는 동작을 파라미터화 하여 collect의 동�
 
 ```java
 List<Transaction> transaction = 
-	transactionStream.collect(Collector.toList());
+	transactionStream.collect(Collectors.toList());
 ```
 
 
@@ -57,7 +57,7 @@ String shortMenu = menu.stream().map(Dish::getName).collect(joining(", "));
 
 ```java
 int totalCalories = menu.stream()
-					.collect(reducing(0,Dish::getCalories,(i,j)-> i + j));
+			.collect(reducing(0,Dish::getCalories,(i,j)-> i + j));
 ```
 
 reducing 은 세 개의 인수를 받습니다.
@@ -69,7 +69,7 @@ reducing 은 세 개의 인수를 받습니다.
 ```java
 Optional<Dish> mostCalorieDish =
 		menu.stream().collect(reducing(
-			(d1,d2) -> d1.getCalories() > d2.getCalrories() ? d1 : d2));
+		(d1,d2) -> d1.getCalories() > d2.getCalrories() ? d1 : d2));
 ```
 
 한개의 인수를 갖는 reducing 팩토리 메서드는 스트림의 첫번째 요소를 첫번째 인수로 받으며,
@@ -82,11 +82,9 @@ String shortMenu = menu.stream().map(Dish::getName)
 					.collect(reducing( (s1,s2)-> s1 + s2) ).get();
 
 String shortMenu = menu.stream()
-					.collect( reducing((d1,d2)-> d1.getName() + 
-											d2.getName() ).get();
+			.collect( reducing((d1,d2)-> d1.getName() + d2.getName() ).get();
 String shortMenu = menu.stream()
-					.collect( reducing( "",Dish::getName,
-								(s1,s2)-> s1 + s2));
+			.collect( reducing( "",Dish::getName,(s1,s2)-> s1 + s2));
 ```
 
 ## 2. 그룹화
@@ -94,8 +92,7 @@ String shortMenu = menu.stream()
 ### 2-1. 그룹화 맛보기
 
 ```java
-Map<Currency, List<Transaction>> transactionsByCurrencies = 
-													new HashMap<>();  
+Map<Currency, List<Transaction>> transactionsByCurrencies = new HashMap<>();  
 for (Transaction transaction : transactions) {  
 	Currency currency = transaction.getCurrency();  
 	List<Transaction> transactionsForCurrency =
@@ -114,8 +111,7 @@ for (Transaction transaction : transactions) {
 Collectors 에서 제공하는 groupingBy() 메서드를 통해 위의 예제를 간단한 코드로 바꾸어 보겠습니다.
 
 ```java
-Map<Currency, List<Transaction>> transactionsByCurrencies = 
-													new HashMap<>();
+Map<Currency, List<Transaction>> transactionsByCurrencies = new HashMap<>();
 transcations.stream().collect(groupingBy(Transcation::getCurrency));
 ```
 
@@ -136,8 +132,7 @@ Map<Dish.Type, List<Dish>> caloricDishesByType =
 ```java
 Map<Dish.Type, List<Dish>> caloricDishesByType =
 		menu.stream().collect(groupingBy(Dish.getType,
-							  filtering(dish->dish.getCalories() > 500
-										  ,toList())));
+				filtering(dish->dish.getCalories() > 500,toList())));
 ```
 
 groupingBy 메서드는 분류 함수만 인수로 받을 수 도 있고, 위의 예저처럼 분류함수와 두번째 인수로 컬렉터를 받을 수 있습니다. 
@@ -169,15 +164,12 @@ return menu.stream().collect(groupingBy(Dish::getType, counting()));
 }
 
 private static Map<Dish.Type, Integer> sumCaloriesByType() {  
-return menu.stream().collect(groupingBy(Dish::getType,  
-							summingInt(Dish::getCalories)));  
+return menu.stream().collect(groupingBy(Dish::getType, summingInt(Dish::getCalories)));  
 }
 
 private static Map<Dish.Type, Optional<Dish>> mostCaloricDishesByType() {  
-return menu.stream().collect(  
-						groupingBy(Dish::getType,  
-						reducing((Dish d1, Dish d2) -> 
-						d1.getCalories() > d2.getCalories() ? d1 : d2)));  
+return menu.stream().collect(groupingBy(Dish::getType,  
+				reducing((Dish d1, Dish d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2)));  
 }
 ```
 
@@ -210,8 +202,7 @@ return menu.stream()
 }
 
 private static Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType() {  
-return menu.stream().collect(partitioningBy(Dish::isVegetarian,
-											groupingBy(Dish::getType)));  
+return menu.stream().collect(partitioningBy(Dish::isVegetarian,groupingBy(Dish::getType)));  
 }
 ```
 
