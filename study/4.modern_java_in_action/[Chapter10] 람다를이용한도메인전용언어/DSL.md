@@ -159,15 +159,85 @@ List<Member> list = query.from(qm)
      - 쿼리 결과를 엔티티가 아닌 특정 객체로 받을 수 잇음
      - 엔티티의 필드명과 DTO의 필드명이 다르다면 as() 메소드를 이용해서 DTO의 필드명으로 맞춰주면 됌
      - 프로퍼티(setter) 접근 방식
+       - Projections.bean() 메소드를 사용
+       ~~~
+        List<ItemDTO> result = query.from(qitem)
+          .list(
+              Projection.bean(ItemDTO.class, qitem.name.as("username"), qitem.price)
+          );
+       ~~~
      - 필드 직접 접근 방식
+       - Projections.fields() 메소드를 사용
+       - 필드의 접근자를 private로 지정해도 동작
+       ~~~
+        List<ItemDTO> result = query.from(qitem)
+          .list(
+              Projection.fields(ItemDTO.class, qitem.name.as("username"), qitem.price)
+          );
+       ~~~
      - 생성자 사용방식
+       - Projections.constructor() 메소드 사용
+       - 엔티티의 필드명과 DTO의 필드명이 다르더라도 as() 메소드르 사용하지 않아도 됌
+       - 파라미터의 순서만 같으면 됌
+       ~~~
+        List<ItemDTO> result = query.from(qitem)
+            .list(
+                Projection.constructor(ItemDTO.class, qitem.name, qitem.price)
+            );
+       ~~~
    - DISTINCT
+     ~~~
+      query.distinct().from(qitem)...
+     ~~~
 8. 배치 쿼리
-9.  동적쿼리
-10. 메소드 위임
+   - QueryDSL은 여러 연산을 일괄적으로 처리하는 배치 쿼리를 지원함
+   - 영속성 컨텍스트를 무시하고 <b>DB에 직접 쿼리함<b>
+   - 영향 받은 튜플의 수가 반환됌
+   - 수정 배치 쿼리
+     - com.mysema.query.jpa.impl.JPAUpdateClause를 사용
+       ~~~
+        JPAUpdateClause updateClause = new JPAUpdateClause(em, qitem);
+        long count = updateClause.where(qitem.name.eq("자바 ORM 표준 JPA 프로그래밍"))
+            .set(qitem.price, qitem.price.add(1000)) // Item의 price를 1000 증가
+            .execute();
+       ~~~
+   - 삭제 배치 쿼리
+     - com.mysema.query.jpa.impl.JPADeleteClause를 사용
+       ~~~
+        JPADeleteClause deleteClause = new JPADeleteClause(em, qitem);
+        long count = deleteClause.where(qitem.name.eq("자바 ORM 표준 JPA 프로그래밍"))
+            .execute();
+       ~~~
+10.  동적쿼리
+    - com.mysema.query.BooleanBuilder는 where()에 들어가는 조건을 동적으로 담는 빌더 객체
+     ~~~
+      BooleanBuilder builder = new BooleanBuilder();
+      builder.and(qitem.name.contains("우유"));
+      builder.and(qitem.price.gt(2500));
+      
+      List<Item> result = query.from(qitem)
+          .where(builder)
+          .list(qitem);
+     ~~~
+12. 메소드 위임
+    - 메소드 위임 기능이란?
+      - 자주 사용하는 검색 조건이 있다면 쿼리 타입에 검색 조건을 직접 추가 가능
+    - 검색 조건 정의
+      - @com.mysema.query.annotations.QueryDelegate 어노테이션을 이용
+      - @QueryDelegate의 속성에 엔티티 클래스를 지정
+      - 정적 메소드의 첫 번째 파라미터에는 대상 엔티티의 쿼리 타입 객체를 지정하고, 두 번째 파라미터부터는 필요한 파라미터를 지정 할 수 있음
+      - String, Date와 같은 자바 기본 ㅐㄴ장 타입에도 메소드 위임 기능을 사용할 수 있음
+    - 메소드 위임 기능 사용
+      - 쿼리 타입의 메소드를 그대로 사용하면 됌
+        ~~~
+        List<Item> result = query.from(qitem)
+            .where(qitem.isExpensive(2400))
+            .list(qitem);
+        ~~~
 
 > 출처 <br>
 > Query DSL : https://kimcoder.tistory.com/495<br>
 > Query DSL : https://lordofkangs.tistory.com/456<br>
+> Query DSL 레퍼런스 문서 : https://querydsl.com/static/querydsl/4.0.1/reference/ko-KR/html_single/ <br>
 > JPQL : https://lordofkangs.tistory.com/386<br>
 > JPA 패러다임 불일치 : https://lordofkangs.tistory.com/336<br>
