@@ -1,4 +1,60 @@
-## 람다를 이요한 도메인 전용 언어
+## 람다를 이용한 도메인 전용 언어
+
+### DSL
+#### DSL이란?
+> 특정 비즈니스 도메인의 문제를 해결하려고 만든 언어<br>
+- 특정 비즈니스 도메인을 인터페이스로 만든 API
+- 특정 도메인에 국한
+
+#### DSL 개발 필요성
+- 코드의 의도가 명확히 전달되어야 하고 프로그래머가 아닌 사람도 이해할 수 있어야 함
+- 가독성은 유지보수의 핵심
+
+#### DSL의 장점과 단점
+> DSL을 도메인에 이용하면 약이 되거나 독이 될 수 있음 <br>
+- 장점
+  - 간결함
+    - 도메인 영역의 용어 사용으로, 비 도메인 전문가도 이해가 쉬움
+    - 다양한 조직 구성원 간에 코드와 도메인 영역이 공유될 수 있음
+  - 가독성
+    - 도메인 영역의 용어를 사용하므로 비 도메인 전문가도 코드를 쉽게 이해할 수 있음
+    - 결과적으로 다양한 조직 구성원 간에 코드와 도메인 영역이 공유될 수 있음
+  - 유지보수
+    - 잘 설계된 DSL로 구현한 코드는 쉽게 유지보수 가능
+    - 지정된 언어로 비즈니스 로직을 표현함으로 애플리케이션의 인프라구조와 관련된 문제와 독립적으로 비즈니스 관련된 코드에 집중하기 용이
+  - 높은 수준의 추상화
+    - DSL은 도메인과 같은 추상화 수준에서 동작하므로 도메인의 문제와 직접적으로 관련되지 않은 세부사항을 숨김
+  - 집중
+    - 비즈니스 도메인의 규칙을 표현할 목적으로 설계된 언어이므로 프로그래머가 특정코드에 집중할 수 있어 생산성 증가
+- 단점
+  - DSL 설계의 어려움
+    - 간결하게 제한적인 언어에 도메인 지식을 담는 것이 쉬운 작업이 아님
+  - 개발 비용
+    - 코드에 DSL을 추가하는 작업은 초기 프로젝트에 많은 비용과 시간이 소모되는 작업
+    - DSL 유지보수와 변경은 프로젝트에 부담을 주는 요소
+  - 추가 우회 계층
+    - DSL은 추가적인 계층으로 도메인 모델을 감싸며 이 때 계층을 최대한 작게 만들어 성능 문제를 회피
+  - 새로 배워야 하는 언어
+  - 호스팅 언어의 한계
+    - 사용자 친화적 DSL을 만들기가 힘듦
+    - 람다 표현식은 이 문제를 해결하는 강력한 도구
+
+#### DSL 패턴 종류
+- 메서드 체인(플루언트 스타일)을 이요한 DSL
+- 중첩된 함수 이용
+- 람다 표현식을 이용한 시퀀싱
+
+#### 메서드 체인(플루언트 스타일)을 이요한 DSL
+> DSL을 구현하는 가장 흔한 방식으로, 인스턴스의 생선단계를 Builder 클래스에 구현해서 지정된 절차에 따라 API를 호출하도록 할 수 있음 <br>
+
+#### 중첩된 함수 이용
+> 다른 함수안에 함수를 이용해서 도메인을 만듦 <br>
+
+#### 람다 표현식을 이용한 시퀀싱
+> 람다 표현식으로 정의한 함수 시퀀스를 사용 <br>
+
+#### DSL 패턴 장단점
+<img src = "https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1846146b-0402-4ca7-8709-5e0a5d09c612%2FUntitled.png&blockId=a5a4831d-db25-434f-8476-c7ea8434677a">
 
 ### 쿼리 DSL
 
@@ -149,7 +205,7 @@ List<Member> list = query.from(qm)
    - 프로젝션 대상이 둘 이상인 경우
      - com.mysema.query.Tuple 타입을 사용
         ~~~
-        List<Tuple> result = query.from(qitem).list(qitem.name, qitem.price); 
+         List<Tuple> result = query.from(qitem).list(qitem.name, qitem.price); 
         for(Tuple tuple : result) {
             String name = tuple.get(qitem.name);
             int price = tuple.get(qitem.price);
@@ -191,7 +247,7 @@ List<Member> list = query.from(qm)
      ~~~
 8. 배치 쿼리
    - QueryDSL은 여러 연산을 일괄적으로 처리하는 배치 쿼리를 지원함
-   - 영속성 컨텍스트를 무시하고 <b>DB에 직접 쿼리함<b>
+   - 영속성 컨텍스트를 무시하고 <b>DB에 직접 쿼리함</b>
    - 영향 받은 튜플의 수가 반환됌
    - 수정 배치 쿼리
      - com.mysema.query.jpa.impl.JPAUpdateClause를 사용
@@ -208,6 +264,7 @@ List<Member> list = query.from(qm)
         long count = deleteClause.where(qitem.name.eq("자바 ORM 표준 JPA 프로그래밍"))
             .execute();
        ~~~
+       
 10.  동적쿼리
     - com.mysema.query.BooleanBuilder는 where()에 들어가는 조건을 동적으로 담는 빌더 객체
      ~~~
