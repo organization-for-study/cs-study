@@ -116,6 +116,38 @@ CompletableFuture.supplyAsync(() -> {
 ~~~
 
 ### 스트림 병렬화와 CompletableFuture 병렬화
+#### 스트림 병렬화 
+- 비블록 코드 만들기
+~~~
+// 상점 리스트
+List<Shop> shops = Arrays.asList(new Shop("BestPrice"),
+                                 new Shop("LetsSaveBig"),
+                                 new Shop("MyFavoriteShop"),
+                                 new Shop("BuyItAll"));
+
+
+// 품명을 입력하면 상점 이름과 제품 가격 문자열을 반환하는 List 스트림으로 구현
+public List<String> findPrices(String product) {
+  return shops.stream()
+    .map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
+    .collect(toList());
+}
+~~~
+
+- 병렬 스트림으로 요청 병렬화
+~~~
+public List<String> findPrices(String product) {
+  return shops.parallelStream()
+    .map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
+    .collect(toList());
+}
+~~~
+
+- 네 개의 상점에서 병렬로 검색이 진행되므로 시간은 하나의 상점에서 가격을 검색하는 정도만 소요
+
+- 병렬 스트림의 문제점
+  - 4개의 작업을 병렬로 수행하여 검색 시간을 최소화 하지만 5개의 작업이 진행되는 경우 4개의 작업 중 하나라도 끝나야 5번째 작업이 시작될 수 있음
+
 #### 스트림 병렬화와 CompletableFuture 병렬화 차이
  - I/O가 포함되는 않은 계산 중심의 동작을 실행할 때는 스트림 인터페이스가 가장 구현하기 간단하며 효율적일 수 있음
 - I/O를 기다리는 작업을 병렬로 실행할 때는 CompletableFuture가 더 많은 유연성을 제공하며, 대기/계산의 비율에 적합한 스레드 수를 설정할 수 있음
@@ -124,4 +156,7 @@ CompletableFuture.supplyAsync(() -> {
 
 
 ### 출처 
-- https://highlighter9.tistory.com/72 [Today I Learned:티스토리]
+- https://highlighter9.tistory.com/72
+- https://huisam.tistory.com/entry/completableFuture#Exceptionally-1
+- https://robin00q.tistory.com/70
+- https://eno1993.tistory.com/m/252
