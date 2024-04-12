@@ -1,14 +1,5 @@
 ## CompletableFuture와 리액티브 프로그래밍 컨셉의 기초
 
-- Reactive Programming의 개념
-- Reactive Programming의 등장배경
-- Reactive Programming의 핵심원칙
-- Synchronous vs Asynchronous
-- Blocking vs Non-Blocking
-- Reactive Streams
-- Message Queue
-- Reactive Programming 사례
-
 ### 리액티브 프로그래밍
 
 #### 정의
@@ -253,3 +244,4 @@ Pub(Publisher)가 Topic에 메시지를 보내면 해당 Topic을 구독해놓�
 - https://joojae.com/what-is-message-queue/
 - https://velog.io/@spamdong/메세지-지향-미들웨어MOM
 - https://jistol.github.io/software%20engineering/2018/04/11/observer-pubsub-pattern/
+- https://medium.com/uplusdevu/메시징-시스템-webflux-적용기-5c696f4e80f9
